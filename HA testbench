@@ -1,0 +1,19 @@
+//Test bench of half adder
+module HA_TB;
+  reg a,b;
+  wire s,c;
+  HA HA1(s,c,a,b);
+  initial 
+    begin 
+  #10; a=0;b=0;
+  #10; a=0;b=1;
+  #10; a=1;b=0;
+  #10; a=1;b=1;
+  #10;$stop;
+  end
+  initial 
+    begin
+      $dumpfile("dump.vcd");
+      $dumpvars(1);
+    end
+endmodule
